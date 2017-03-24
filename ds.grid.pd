@@ -1,0 +1,49 @@
+#N struct axes-template float x float y;
+#N canvas 350 23 789 643 10;
+#N canvas 778 314 498 420 \$0-axes-template 0;
+#X obj 46 31 inlet;
+#X obj 47 224 drawpolygon 0 1 0 250 500 250;
+#X obj 46 82 t b b;
+#X obj 205 152 pointer;
+#X obj 46 58 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X msg 46 122 0 0;
+#X obj 47 200 drawpolygon 0 1 250 0 250 500;
+#X text 230 199 x axis;
+#X text 229 223 y axis;
+#X obj 205 111 f \$0;
+#X floatatom 62 308 5 0 0 0 - - -, f 5;
+#X obj 190 333 pointer;
+#X obj 222 288 f \$0;
+#X obj 190 270 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X msg 309 212 \; pd-datagrid clear;
+#X msg 190 311 traverse pd-datagrid \, next;
+#X msg 205 132 traverse pd-datagrid \, bang;
+#X obj 143 30 struct axes-template float x float y;
+#X obj 46 175 append axes-template x y;
+#X obj 62 356 set axes-template x;
+#X connect 0 0 4 0;
+#X connect 2 0 5 0;
+#X connect 2 1 16 0;
+#X connect 3 0 18 2;
+#X connect 4 0 2 0;
+#X connect 5 0 18 0;
+#X connect 9 0 16 0;
+#X connect 10 0 19 0;
+#X connect 11 0 19 1;
+#X connect 12 0 15 0;
+#X connect 13 0 15 0;
+#X connect 15 0 11 0;
+#X connect 16 0 3 0;
+#X restore 87 256 pd \$0-axes-template;
+#X obj 87 220 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 239 31 cnv 15 500 500 empty empty empty 20 12 0 14 -204786 -66577
+0;
+#N canvas 382 76 824 705 datagrid 0;
+#X scalar axes-template 0 0 \;;
+#X coords 0 0 500 500 500 500 1;
+#X restore 237 30 pd datagrid;
+#X connect 1 0 0 0;
+#X coords 0 0 1 1 85 60 0;

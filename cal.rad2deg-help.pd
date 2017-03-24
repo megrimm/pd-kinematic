@@ -1,0 +1,9 @@
+#N canvas 0 22 417 297 10;
+#X text 114 40 calculate radians to degrees;
+#X floatatom 119 87 5 0 0 0 - - -, f 5;
+#X floatatom 119 182 5 0 0 0 - - -, f 5;
+#X text 162 86 <-- radians;
+#X text 160 181 <-- degrees;
+#X obj 119 128 cal.rad2deg;
+#X connect 1 0 5 0;
+#X connect 5 0 2 0;

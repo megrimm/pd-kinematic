@@ -1,0 +1,107 @@
+#N struct template float x1 float y1 float x2 float y2 float x3 float
+y3 float x4 float y4 float q;
+#N canvas 583 173 489 439 10;
+#N canvas 833 47 555 411 data 0;
+#X scalar template 199.712 314.997 200.288 285.003 400.251 288.843
+399.675 318.838 91.1003 \;;
+#X coords 0 0 500 500 300 300 2 0 0;
+#X restore 125 75 pd data;
+#N canvas 695 38 615 494 template 1;
+#X text 21 69 fill color | border color | line thinkness |;
+#X obj 424 339 pointer;
+#X floatatom 25 143 5 0 0 0 - - -, f 5;
+#X msg 451 270 \; pd-data clear;
+#X msg 424 304 traverse pd-data \, bang, f 17;
+#X obj 25 162 t f f b;
+#X obj 424 248 t b b;
+#X obj 64 183 s \$0-pbang;
+#X obj 424 224 r \$0-pbang;
+#X obj 424 360 s \$0-pointer;
+#X obj 514 402 r \$0-pointer;
+#X obj 25 280 r \$0-build;
+#X obj 25 256 s \$0-build;
+#X obj 44 236 s \$0-qnum;
+#X obj 459 381 r \$0-qnum;
+#X obj 23 48 filledpolygon 900 0 1 x1 y1 x2 y2 x3 y3 x4 y4;
+#X obj 22 13 struct template float x1 float y1 float x2 float y2 float
+x3 float y3 float x4 float y4 float q;
+#X obj 237 188 v w;
+#X obj 268 189 v h;
+#X obj 176 188 v x;
+#X obj 207 188 v y;
+#X obj 25 426 append template x1 y1 x2 y2 x3 y3 x4 y4 q, f 82;
+#X obj 44 203 expr $f1 * 180 / (4 * atan(1)), f 15;
+#X obj 37 37;
+#X obj 329 189 v oh;
+#X obj 298 189 v ow;
+#X obj 146 168 unpack f f f f f f f, f 31;
+#X obj 25 306 expr x + ((w + ow) / 2) * cos($f1) - ((h + oh) / 2) *
+sin($f1) \; y + ((h + oh) / 2 ) * cos($f1) + ((w + ow) / 2 ) * sin($f1)
+\; x - ((w - ow) / 2) * cos($f1) - ((h + oh) / 2) * sin($f1) \; y +
+((h + oh) / 2 ) * cos($f1) - ((w - ow) / 2 ) * sin($f1) \; x - ((w
++ ow) / 2) * cos($f1) + ((h - oh) / 2) * sin($f1) \; y - ((h - oh)
+/ 2 ) * cos($f1) - ((w + ow) / 2 ) * sin($f1) \; x + ((w - ow) / 2)
+* cos($f1) + ((h - oh) / 2) * sin($f1) \; y - ((h - oh) / 2 ) * cos($f1)
++ ((w - ow) / 2 ) * sin($f1) \;, f 64;
+#X obj 146 209 s \$0-angle;
+#X obj 25 122 r \$0-angle;
+#X obj 400 12 inlet;
+#X obj 400 37 s \$0-angle;
+#X obj 473 12 inlet;
+#X obj 473 37 s \$0-dataset;
+#X obj 156 145 r \$0-dataset;
+#X msg 146 125 0 200 300 30 200 0 -200;
+#X obj 25 95 drawnumber q 5 35 0 angle=;
+#X connect 1 0 9 0;
+#X connect 2 0 5 0;
+#X connect 4 0 1 0;
+#X connect 5 0 12 0;
+#X connect 5 1 22 0;
+#X connect 5 2 7 0;
+#X connect 6 0 4 0;
+#X connect 6 1 3 0;
+#X connect 8 0 6 0;
+#X connect 10 0 21 9;
+#X connect 11 0 27 0;
+#X connect 14 0 21 8;
+#X connect 22 0 13 0;
+#X connect 26 0 28 0;
+#X connect 26 1 19 0;
+#X connect 26 2 20 0;
+#X connect 26 3 17 0;
+#X connect 26 4 18 0;
+#X connect 26 5 25 0;
+#X connect 26 6 24 0;
+#X connect 27 0 21 0;
+#X connect 27 1 21 1;
+#X connect 27 2 21 2;
+#X connect 27 3 21 3;
+#X connect 27 4 21 4;
+#X connect 27 5 21 5;
+#X connect 27 6 21 6;
+#X connect 27 7 21 7;
+#X connect 29 0 2 0;
+#X connect 30 0 31 0;
+#X connect 32 0 33 0;
+#X connect 34 0 26 0;
+#X connect 35 0 26 0;
+#X restore 21 90 pd template;
+#X text 20 19 rotate a plygon;
+#X floatatom 21 72 5 0 0 0 - - -, f 5;
+#N canvas 0 22 750 183 formula 0;
+#X text 34 20 A = rotation angle;
+#X text 34 35 x and y are center point of rotation;
+#X text 33 60 UL = x + ( Width / 2 ) * cos A - ( Height / 2 ) * sin
+A \, y + ( Height / 2 ) * cos A + ( Width / 2 ) * sin A UR = x - (
+Width / 2 ) * cos A - ( Height / 2 ) * sin A \, y + ( Height / 2 )
+* cos A - ( Width / 2 ) * sin A BL = x + ( Width / 2 ) * cos A + (
+Height / 2 ) * sin A \, y - ( Height / 2 ) * cos A + ( Width / 2 )
+* sin A BR = x - ( Width / 2 ) * cos A + ( Height / 2 ) * sin A \,
+y - ( Height / 2 ) * cos A - ( Width / 2 ) * sin A, f 108;
+#X restore 21 114 pd formula;
+#X obj 21 50 inlet;
+#X obj 84 49 inlet;
+#X connect 3 0 1 0;
+#X connect 5 0 3 0;
+#X connect 6 0 1 1;
+#X coords 0 -1 1 1 300 300 1 125 75;

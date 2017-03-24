@@ -1,0 +1,17 @@
+#N canvas 668 23 463 288 10;
+#X msg 204 110 1500;
+#X floatatom 81 27 5 0 0 0 - - -, f 5;
+#X floatatom 142 56 5 0 0 0 - - -, f 5;
+#X text 244 108 <-- distance between points;
+#X text 121 28 <-- X;
+#X text 178 53 <-- Y;
+#X obj 81 136 kin.inv.2d.polargraph;
+#X floatatom 81 212 8 0 0 0 - - -, f 8;
+#X floatatom 204 174 8 0 0 0 - - -, f 8;
+#X text 135 212 <-- line distance 1;
+#X text 259 173 <-- line distance 2;
+#X connect 0 0 6 2;
+#X connect 1 0 6 0;
+#X connect 2 0 6 1;
+#X connect 6 0 7 0;
+#X connect 6 1 8 0;

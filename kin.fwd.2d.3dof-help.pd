@@ -1,0 +1,25 @@
+#N canvas 143 103 403 378 10;
+#X msg 130 145 5 4 3;
+#X floatatom 43 72 5 0 0 0 - - -, f 5;
+#X floatatom 72 95 5 0 0 0 - - -, f 5;
+#X floatatom 101 118 5 0 0 0 - - -, f 5;
+#X floatatom 43 247 5 0 0 0 - - -, f 5;
+#X floatatom 86 223 5 0 0 0 - - -, f 5;
+#X floatatom 130 197 5 0 0 0 - - -, f 5;
+#X text 89 248 x;
+#X text 127 225 y;
+#X obj 43 173 kin.fwd.2d.3dof;
+#X text 175 144 <- link lengths 1 \, 2 & 3;
+#X text 142 117 <- joint angle 3;
+#X text 109 92 <- joint angle 2;
+#X text 81 71 <- joint angle 1;
+#X text 48 300 megrimm 2017;
+#X text 39 19 forward kinematics in 2d space with 3 degrees of freedom
+;
+#X connect 0 0 9 3;
+#X connect 1 0 9 0;
+#X connect 2 0 9 1;
+#X connect 3 0 9 2;
+#X connect 9 0 4 0;
+#X connect 9 1 5 0;
+#X connect 9 2 6 0;

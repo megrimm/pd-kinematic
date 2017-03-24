@@ -1,0 +1,45 @@
+#N canvas 595 145 658 326 10;
+#X text 44 209 x = l1 cosθ1 + l2 cos(θ1 + θ2 ) + l3 cos(θ1 + θ2
++ θ3 );
+#X text 43 228 y = l1 sinθ1 + l2 sin(θ1 + θ2 ) + l3 sin(θ1 + θ2
++ θ3 );
+#X text 44 248 φ=(θ1 + θ2 + θ3);
+#X obj 527 92 v l1;
+#X obj 561 92 v l2;
+#X obj 596 92 v l3;
+#X obj 44 95 f;
+#X obj 225 95 s \$0-trig;
+#X obj 52 73 r \$0-trig;
+#X obj 225 73 t b f;
+#X obj 434 95 s \$0-trig;
+#X obj 434 73 t b f;
+#X obj 44 124 expr l1 * cos($f1) + l2 * cos($f1 + $f2) + l3 * cos($f1
++ $f2 + $f3) \; l1 * sin($f1) + l2 * sin($f1 + $f2) + l3 * sin($f1
++ $f2 + $f3) \; $f1 + $f2 + $f3, f 70;
+#X obj 44 50 inlet;
+#X obj 225 50 inlet;
+#X obj 434 47 inlet;
+#X obj 527 49 inlet;
+#X obj 527 70 unpack f f f;
+#X obj 44 173 outlet;
+#X obj 252 171 outlet;
+#X obj 460 171 outlet;
+#X text 40 18 forward kinematics in 2d space with 3 degrees of freedom
+;
+#X text 45 286 megrimm 2017;
+#X connect 6 0 12 0;
+#X connect 8 0 6 0;
+#X connect 9 0 7 0;
+#X connect 9 1 12 1;
+#X connect 11 0 10 0;
+#X connect 11 1 12 2;
+#X connect 12 0 18 0;
+#X connect 12 1 19 0;
+#X connect 12 2 20 0;
+#X connect 13 0 6 0;
+#X connect 14 0 9 0;
+#X connect 15 0 11 0;
+#X connect 16 0 17 0;
+#X connect 17 0 3 0;
+#X connect 17 1 4 0;
+#X connect 17 2 5 0;

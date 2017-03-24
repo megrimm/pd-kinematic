@@ -1,0 +1,6 @@
+#N canvas 142 23 310 251 10;
+#X obj 66 29 inlet;
+#X obj 66 157 outlet;
+#X obj 66 91 expr $f1 * (4 * atan(1)) / 180;
+#X connect 0 0 2 0;
+#X connect 2 0 1 0;

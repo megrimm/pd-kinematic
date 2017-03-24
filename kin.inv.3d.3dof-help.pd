@@ -1,0 +1,16 @@
+#N canvas 123 23 450 300 10;
+#X msg 302 46 5 4 3;
+#X floatatom 199 56 5 0 0 0 - - -, f 5;
+#X floatatom 220 76 5 0 0 0 - - -, f 5;
+#X floatatom 263 81 5 0 0 0 - - -, f 5;
+#X floatatom 204 207 5 0 0 0 - - -, f 5;
+#X floatatom 246 182 5 0 0 0 - - -, f 5;
+#X floatatom 298 165 5 0 0 0 - - -, f 5;
+#X obj 207 123 kin.inv.3d.3dof;
+#X connect 0 0 7 3;
+#X connect 1 0 7 0;
+#X connect 2 0 7 1;
+#X connect 3 0 7 2;
+#X connect 7 0 4 0;
+#X connect 7 1 5 0;
+#X connect 7 2 6 0;

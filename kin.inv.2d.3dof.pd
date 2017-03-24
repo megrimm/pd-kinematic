@@ -1,0 +1,82 @@
+#N canvas 239 23 798 812 10;
+#X obj 331 81 v l1;
+#X obj 448 142 v l3;
+#X obj 390 109 v l2;
+#X text 112 76 x;
+#X text 219 64 y;
+#X obj 510 100 v t;
+#X text 542 100 <-- t-angle;
+#X text 520 196 A = (0 \, 0);
+#X msg 331 36 5;
+#X msg 390 87 4;
+#X msg 448 119 3;
+#X floatatom 196 94 5 0 0 0 - - -, f 5;
+#X floatatom 86 98 5 0 0 0 - - -, f 5;
+#X msg 85 74 4;
+#X msg 189 64 5;
+#X floatatom 85 432 5 0 0 0 - - -, f 5;
+#X obj 324 364 v j3y;
+#X obj 362 364 v j3x;
+#X obj 291 364 v c2;
+#X obj 257 364 v s2;
+#X obj 224 364 v a2;
+#X obj 191 364 v s;
+#X obj 158 364 v j1;
+#X obj 125 364 v j2;
+#X obj 91 364 v j3;
+#X obj 91 215 expr t - j1 - j2 \; asin(2 * s/(l1 * l2)) \; a2 + (asin(2
+* s/(l1 * c2))) \; sqrt(s2 * (s2 - l1) * (s2 - l2) * (s2 - c2)) \;
+atan(j3y/j3x) \; (l1 + l2 + c2) / 2 \; sqrt(pow(j3x \, 2) + pow(j3y
+\, 2)) \; $f2 + l3 * sin(t) \; $f1 + l3 * cos(t);
+#X floatatom 124 433 5 0 0 0 - - -, f 5;
+#X floatatom 161 433 5 0 0 0 - - -, f 5;
+#X obj 199 124 t b f;
+#X obj 81 182 f;
+#X msg 513 64 2;
+#X obj 49 30 inlet;
+#X obj 165 37 inlet;
+#X obj 397 43 unpack f f f f;
+#X obj 395 14 inlet;
+#X obj 53 480 outlet;
+#X obj 102 482 outlet;
+#X obj 150 482 outlet;
+#X text 439 366 We know the lenghts of l1 \, l2 \, l3 \; We know the
+Target coordinates x \, y \; We choose the angle l3 makes with the
+origin (t) \; We consifer that A is our origin (0 \, 0) \; \; j3x=x+l3*cos(t)
+\; j3y=y+l3*sin(t) \; \; c2=sqr(pow(j3x \, 2) + pow(j3y \, 2)) \; s2=(l1+l2+c)/2
+\; \; a2=atan(j3y/j3x) \; \; \; s=sqr(s2 * (s2 - l1)(s2 - l2)(s2 -
+c2)) \; \; \; ja=asin(2s/(l1*c2)) \; jb=asin(2s/(l1*l2)) \; jc=asin(2s/(c2/l2))
+\; \; j1 = ac_angle + ja \; J2 = jb \; j3 = t - j1 - j2 \;;
+#X connect 8 0 0 0;
+#X connect 9 0 2 0;
+#X connect 10 0 1 0;
+#X connect 11 0 28 0;
+#X connect 12 0 29 0;
+#X connect 13 0 12 0;
+#X connect 14 0 11 0;
+#X connect 25 0 24 0;
+#X connect 25 0 15 0;
+#X connect 25 0 35 0;
+#X connect 25 1 23 0;
+#X connect 25 1 26 0;
+#X connect 25 1 36 0;
+#X connect 25 2 22 0;
+#X connect 25 2 27 0;
+#X connect 25 2 37 0;
+#X connect 25 3 21 0;
+#X connect 25 4 20 0;
+#X connect 25 5 19 0;
+#X connect 25 6 18 0;
+#X connect 25 7 16 0;
+#X connect 25 8 17 0;
+#X connect 28 0 29 0;
+#X connect 28 1 25 1;
+#X connect 29 0 25 0;
+#X connect 30 0 5 0;
+#X connect 31 0 29 0;
+#X connect 32 0 28 0;
+#X connect 33 0 0 0;
+#X connect 33 1 2 0;
+#X connect 33 2 1 0;
+#X connect 33 3 5 0;
+#X connect 34 0 33 0;

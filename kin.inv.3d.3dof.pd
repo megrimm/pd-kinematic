@@ -1,0 +1,51 @@
+#N canvas 578 23 691 725 10;
+#X obj 129 107 inlet;
+#X obj 230 110 inlet;
+#X obj 333 100 inlet;
+#X obj 576 55 inlet;
+#X obj 70 492 outlet;
+#X obj 359 470 outlet;
+#X obj 486 454 outlet;
+#X text 100 638 megrimm 2017;
+#X text 88 558 ((x * x) + (y * y) + (( z − l1 ) * ( z − l1 )) −
+(l2 * l2) − (l3 * l3)) / 2 * l2 * l3, f 90;
+#X obj 558 156 v l1;
+#X obj 599 158 v l2;
+#X obj 636 158 v l3;
+#X obj 558 115 unpack f f f;
+#X obj 604 349 v c3;
+#X obj 499 346 v s3;
+#X obj 43 249 expr atan2($f2 \, $f1) \; atan2(($f3 - l1) \, (sqrt(pow($f1
+\, 2) + pow($f2 \, 2)))) - atan2(l3 * s3 \, l2 + l3 * c3) \; atan2(s3
+\, c3) \; sqrt(1 - c3) \; (pow($f1 \, 2) + pow($f2 \, 2) + pow(($f3
+- l1) \, 2) - pow(l2 \, 2) - pow(l3 \, 2)) / 2 * l2 *l3, f 87;
+#X obj 129 157 r \$0-trig;
+#X obj 99 191 f;
+#X obj 336 202 s \$0-trig;
+#X obj 201 178 s \$0-trig;
+#X obj 222 156 t b f;
+#X obj 337 153 t b f;
+#X obj 65 436 expr $f1 * 180 / (4 * atan(1));
+#X obj 168 389 expr $f1 * 180 / (4 * atan(1));
+#X obj 383 409 expr $f1 * 180 / (4 * atan(1));
+#X connect 0 0 17 0;
+#X connect 1 0 20 0;
+#X connect 2 0 21 0;
+#X connect 3 0 12 0;
+#X connect 12 0 9 0;
+#X connect 12 1 10 0;
+#X connect 12 2 11 0;
+#X connect 15 0 22 0;
+#X connect 15 1 23 0;
+#X connect 15 2 24 0;
+#X connect 15 3 14 0;
+#X connect 15 4 13 0;
+#X connect 16 0 17 0;
+#X connect 17 0 15 0;
+#X connect 20 0 19 0;
+#X connect 20 1 15 1;
+#X connect 21 0 18 0;
+#X connect 21 1 15 2;
+#X connect 22 0 4 0;
+#X connect 23 0 5 0;
+#X connect 24 0 6 0;
