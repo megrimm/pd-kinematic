@@ -1,14 +1,14 @@
 #N canvas 548 384 393 269 10;
-#X floatatom 41 191 10 0 0 0 - - -, f 10;
+#X floatatom 41 191 10 0 0 0 - - -;
 #X text 114 192 <-- distance;
-#X floatatom 41 55 5 0 0 0 - - -, f 5;
+#X floatatom 41 55 5 0 0 0 - - -;
 #X text 85 55 <-- steps;
 #X text 217 86 <-- steps per revolution;
 #X text 225 111 <-- bore size;
 #X text 32 18 calculatete distance based on motor steps;
 #X msg 158 88 spr 800;
 #X msg 178 112 bore 5;
-#X obj 41 143 calc.step2dist 800 5;
+#X obj 41 143 cal.step2dist 800 5;
 #X connect 2 0 9 0;
 #X connect 7 0 9 1;
 #X connect 8 0 9 1;

@@ -1,0 +1,10 @@
+#N canvas 561 68 320 273 10;
+#X obj 44 100 expr pow(2 \, $f1);
+#X text 40 32 Calculates Bit Depth;
+#X text 88 152 <-- number of possible values;
+#X text 83 66 <-- number of bits;
+#X text 39 216 megrimm 2019;
+#X obj 44 66 inlet;
+#X obj 44 152 outlet;
+#X connect 0 0 6 0;
+#X connect 5 0 0 0;

@@ -1,0 +1,10 @@
+#N canvas 593 441 315 239 10;
+#X text 36 17 Calculates Bit Depth;
+#X text 39 189 megrimm 2019;
+#X text 97 135 <-- number of possible values;
+#X text 79 56 <-- number of bits;
+#X obj 40 94 cal.bitres;
+#X floatatom 40 57 5 0 0 0 - - -;
+#X floatatom 40 137 8 0 0 0 - - -;
+#X connect 4 0 6 0;
+#X connect 5 0 4 0;

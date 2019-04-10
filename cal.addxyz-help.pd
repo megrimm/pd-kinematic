@@ -1,0 +1,11 @@
+#N canvas 337 151 235 206 10;
+#X obj 50 138 print;
+#X floatatom 125 89 5 0 0 0 - - -;
+#X msg 62 73 bang;
+#X text 46 19 adds X Y Z list by n;
+#X obj 50 110 cal.addxyz 2;
+#X msg 50 47 100 -100 50;
+#X connect 1 0 4 1;
+#X connect 2 0 4 0;
+#X connect 4 0 0 0;
+#X connect 5 0 4 0;

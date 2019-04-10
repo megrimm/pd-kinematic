@@ -1,14 +1,14 @@
 #N canvas 447 322 262 240 10;
-#X obj 61 134 calc.multxyz 4;
 #X msg 61 69 100 -100;
 #X obj 61 169 print;
-#X floatatom 167 74 5 0 0 0 - - -, f 5;
+#X floatatom 167 74 5 0 0 0 - - -;
 #X msg 73 91 bang;
 #X obj 79 111 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
 #X text 54 27 multiplies X Y Z list by n;
-#X connect 0 0 2 0;
-#X connect 1 0 0 0;
-#X connect 3 0 0 1;
-#X connect 4 0 0 0;
-#X connect 5 0 0 0;
+#X obj 61 134 cal.multxyz 4;
+#X connect 0 0 6 0;
+#X connect 2 0 6 1;
+#X connect 3 0 6 0;
+#X connect 4 0 6 0;
+#X connect 6 0 1 0;
